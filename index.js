@@ -33,8 +33,9 @@ bot.help((ctx) => ctx.reply(text.commands));
 bot.command('emergency', async (ctx)=> {
     try {
         const chatId = ctx.chat.id;
-        await ctx.replyWithHTML('🚑Зателефонуйте до швидкої допомоги🚑');
+        await ctx.replyWithHTML('🚑Номери екстренних служб🚑');
         await ctx.telegram.sendContact(chatId, '103', 'ШВИДКА ДОПОМОГА');
+        await ctx.telegram.sendContact(chatId, '101', 'ДСНС');
     } catch(e) {
         console.error(e);
     }
